@@ -118,11 +118,11 @@ public class JustIdentityProvider extends AbstractOAuth2IdentityProvider<JustIde
                 JustIdentityProviderConfig config = JustIdentityProvider.this.getConfig();
                 BrokeredIdentityContext federatedIdentity = new BrokeredIdentityContext(authUser.getUuid());
                 // 全部信息
-                authUser.getRawUserInfo().forEach((k, v) -> {
-                    String value = (v instanceof String) ? v.toString() : JSONObject.toJSONString(v);
+                //authUser.getRawUserInfo().forEach((k, v) -> {
+                  //  String value = (v instanceof String) ? v.toString() : JSONObject.toJSONString(v);
                     // v  不能过长
-                    federatedIdentity.setUserAttribute(config.getAlias() + "-" + k, value.substring(0, 255));
-                });
+                    //federatedIdentity.setUserAttribute(config.getAlias() + "-" + k, value.substring(0, 255));
+                //});
 
                 if (getConfig().isStoreToken()) {
                     // make sure that token wasn't already set by getFederatedIdentity();
